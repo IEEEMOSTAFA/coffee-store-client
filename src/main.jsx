@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch('http://localhost:5000/coffee')
+    loader: () => fetch('https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/coffee')
   },
   {
     path: "/addCoffee",
@@ -31,24 +31,35 @@ const router = createBrowserRouter([
   {
     path: "/updateCoffee/:id",
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+    loader: ({ params }) => fetch(`https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/coffee/${params.id}`)
   },
   {
     path: "/signup",
     element: <SignUp></SignUp>,
-    // loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+    // loader: ({params}) => fetch(`https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/coffee/${params.id}`)
   },
   {
     path: "/signin",
     element: <SignIn></SignIn>,
-    // loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+    // loader: ({params}) => fetch(`https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/coffee/${params.id}`)
   },
+  
   {
     path: "/users",
-    element: <Users></Users>,
-    loader: () => fetch('http://localhost:5000/user')
-   
-  },
+    element: <Users />,
+    loader: async () => {
+      try {
+        const res = await fetch('https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/user');
+        if (!res.ok) throw new Error('Failed to fetch users');
+        return res.json();
+      } catch (err) {
+        console.error(err);
+        throw err;
+      }
+    },
+    errorElement: <div className="text-red-500 p-4">🚨 Failed to load users!</div>
+  }
+  
 ]);
 
 
