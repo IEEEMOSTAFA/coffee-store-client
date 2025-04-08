@@ -15,7 +15,7 @@ const SignUp = () => {
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { email, createdAt  };
 
-                fetch('https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/user', {
+                fetch('https://coffee-store-server-civ98h280-ieee-mostafas-projects.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

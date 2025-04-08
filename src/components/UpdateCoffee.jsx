@@ -55,7 +55,7 @@
 //         delete updatedCoffee.photo; // Remove the photo if not updating the image
 
 //         try {
-//             const response = await fetch(`https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/coffee/${_id}`, {
+//             const response = await fetch(`https://coffee-store-server-civ98h280-ieee-mostafas-projects.vercel.app/coffee/${_id}`, {
 //                 method: 'PUT',
 //                 headers: { 'Content-Type': 'application/json' },
 //                 body: JSON.stringify(updatedCoffee),
@@ -221,7 +221,7 @@ const UpdateCoffee = () => {
         console.log(newCoffee)
 
         // send data to the server and database
-        fetch(`https://coffee-store-server-4c3hgcc0r-ieee-mostafas-projects.vercel.app/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-civ98h280-ieee-mostafas-projects.vercel.app/coffee/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
