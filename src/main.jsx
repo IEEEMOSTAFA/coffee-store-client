@@ -23,7 +23,7 @@
 //       {
 //         path: "/",
 //         element: <App></App>,
-//         loader: () => fetch('http://localhost:5000/coffee')
+//         loader: () => fetch('https://coffee-choice.onrender.com/coffee')
 //       },
 //       {
 //         path: "/addCoffee",
@@ -36,17 +36,17 @@
 //       {
 //         path: "/updateCoffee/:id",
 //         element: <UpdateCoffee></UpdateCoffee>,
-//         loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+//         loader: ({ params }) => fetch(`https://coffee-choice.onrender.com/coffee/${params.id}`)
 //       },
 //       {
 //         path: "/signup",
 //         element: <SignUp></SignUp>,
-//         // loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+//         // loader: ({params}) => fetch(`https://coffee-choice.onrender.com/coffee/${params.id}`)
 //       },
 //       {
 //         path: "/signin",
 //         element: <SignIn></SignIn>,
-//         // loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+//         // loader: ({params}) => fetch(`https://coffee-choice.onrender.com/coffee/${params.id}`)
 //       },
       
 //       // {
@@ -54,7 +54,7 @@
 //       //   element: <Users />,
 //       //   loader: async () => {
 //       //     try {
-//       //       const res = await fetch('http://localhost:5000/user');
+//       //       const res = await fetch('https://coffee-choice.onrender.com/user');
 //       //       if (!res.ok) throw new Error('Failed to fetch users');
 //       //       return res.json();
 //       //     } catch (err) {
@@ -70,7 +70,7 @@
 //         element: <Users />,
 //         loader: async () => {
 //           try {
-//             const res = await fetch('http://localhost:5000/user');
+//             const res = await fetch('https://coffee-choice.onrender.com/user');
 //             if (!res.ok) {
 //               const errorData = await res.json().catch(() => ({}));
 //               throw new Error(errorData.message || `HTTP error! status: ${res.status}`);
@@ -136,7 +136,7 @@
 //         element: <App></App>,
 //         loader: async () => {
 //           try {
-//             const response = await fetch('http://localhost:5000/coffee');
+//             const response = await fetch('https://coffee-choice.onrender.com/coffee');
 //             if (!response.ok) {
 //               throw new Error(`Failed to fetch coffee data: ${response.status}`);
 //             }
@@ -160,7 +160,7 @@
 //         element: <UpdateCoffee></UpdateCoffee>,
 //         loader: async ({ params }) => {
 //           try {
-//             const response = await fetch(`http://localhost:5000/coffee/${params.id}`);
+//             const response = await fetch(`https://coffee-choice.onrender.com/coffee/${params.id}`);
 //             if (!response.ok) {
 //               throw new Error(`Failed to fetch coffee details: ${response.status}`);
 //             }
@@ -184,7 +184,7 @@
 //         element: <Users />,
 //         loader: async () => {
 //           try {
-//             const response = await fetch('http://localhost:5000/user');
+//             const response = await fetch('https://coffee-choice.onrender.com/user');
 //             if (!response.ok) {
 //               const errorData = await response.json().catch(() => ({}));
 //               throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
@@ -255,7 +255,7 @@ const router = createBrowserRouter([
         element: <App />,
         loader: async () => {
           try {
-            const response = await fetch('http://localhost:5000/coffee', {
+            const response = await fetch('https://coffee-choice.onrender.com/coffee', {
               headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
               }
@@ -280,7 +280,7 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: async ({ params }) => {
-          const response = await fetch(`http://localhost:5000/coffee/${params.id}`);
+          const response = await fetch(`https://coffee-choice.onrender.com/coffee/${params.id}`);
           if (!response.ok) {
             throw new Error('Failed to fetch coffee details');
           }
@@ -299,7 +299,7 @@ const router = createBrowserRouter([
         path: "/users",
         element: <Users />,
         loader: async () => {
-          const response = await fetch('http://localhost:5000/user');
+          const response = await fetch('https://coffee-choice.onrender.com/user');
           if (!response.ok) {
             throw new Error('Failed to load user data');
           }

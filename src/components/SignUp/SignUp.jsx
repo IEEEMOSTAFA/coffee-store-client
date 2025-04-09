@@ -15,7 +15,7 @@ const SignUp = () => {
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { email, createdAt  };
 
-                fetch('http://localhost:5000/user', {
+                fetch('https://coffee-choice.onrender.com/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
