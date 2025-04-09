@@ -23,7 +23,7 @@
 //                 // console.log('Delete Confirm :');
 
 
-//                 fetch(`https://coffee-store-server-civ98h280-ieee-mostafas-projects.vercel.app/coffee/${_id}`, {
+//                 fetch(`http://localhost:5000/coffee/${_id}`, {
 //                     method:'DELETE'
 //                 })
 //                     .then(res => res.json())
@@ -106,7 +106,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://coffee-store-server-civ98h280-ieee-mostafas-projects.vercel.app/coffee/${_id}`, {
+                fetch(`http://localhost:5000/coffee/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

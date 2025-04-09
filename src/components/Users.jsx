@@ -6,17 +6,17 @@ const Users = () => {
     const [users, setUsers] = useState(loadedUsers);
 
     const handleDelete = id => {
-        fetch(`https://coffee-store-server-civ98h280-ieee-mostafas-projects.vercel.app/user/${id}`, {
+        fetch(`http://localhost:5000/user/${id}`, {
             method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.deletedCount > 0) {
-                console.log('Deleted successfully');
-                const remainingUsers = users.filter(user => user._id !== id);
-                setUsers(remainingUsers);
-            }
-        });
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    console.log('Deleted successfully');
+                    const remainingUsers = users.filter(user => user._id !== id);
+                    setUsers(remainingUsers);
+                }
+            });
     };
 
     return (
